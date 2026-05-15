@@ -3,7 +3,25 @@
 
 @import '../../.config/waybar/wallust/colors-waybar.css';
 
-@define-color noti-border-color @color12;
+@define-color noti-border-color white;
+@define-color foreground white;
+@define-color cursor white;
+@define-color color0 white;
+@define-color color1 white;
+@define-color color2 white;
+@define-color color3 white;
+@define-color color4 white;
+@define-color color5 white;
+@define-color color6 white;
+@define-color color7 white;
+@define-color color8 white;
+@define-color color9 white;
+@define-color color10 white;
+@define-color color11 white;
+@define-color color12 white;
+@define-color color13 white;
+@define-color color14 white;
+@define-color color15 white;
 @define-color noti-bg rgba(0, 0, 0, 0.4);
 @define-color noti-bg-alt @background-alt;
 @define-color noti-bg-hover @background;
@@ -158,6 +176,11 @@
     border-radius: 10px
 }
 
+.notification-content .image {
+    border-radius: 0;
+    color: @noti-border-color;
+}
+
 .summary {
     font-size: 1rem;
     font-weight: bold;
@@ -189,6 +212,7 @@
 	color: @text-color;
     border-radius: 10px;
     padding: 10px;
+    min-height: 800px;
 }
 
 .control-center-list {
@@ -216,7 +240,7 @@
 }
 
 .blank-window {
-    background: alpha(black, 0.1)
+    background: transparent;
 }
 
 .widget-title {
@@ -240,6 +264,7 @@
 .widget-title>button:hover {
     background: @text-color;
     color: @noti-bg-hover;
+    transition: none;
 }
 
 .widget-dnd {
@@ -253,17 +278,17 @@
 
 .widget-dnd>switch {
     border-radius: 10px;
-    border: 1px solid #7aa2f7;
-    background: @noti-border-color;
+    border: 1px solid alpha(@noti-border-color, 0.3);
+    background: transparent;
 }
 
 .widget-dnd>switch:checked {
-    background: #f7768e;
-    border: 1px solid #f7768e;
+    background: @noti-border-color;
+    border: 1px solid @noti-border-color;
 }
 
 .widget-dnd>switch slider {
-    background: @noti-bg;
+    background: @noti-border-color;
     border-radius: 10px
 }
 
@@ -333,7 +358,8 @@
 /* individual buttons */
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
     background: @text-color;
-    color: @noti-bg-hover
+    color: @noti-bg-hover;
+    transition: none;
 }
 
 .widget-menubar>box>.menu-button-bar>button {

@@ -7,4 +7,16 @@
 
 {
 
+"custom/transparency": {
+	"return-type": "json",
+	"exec": "$HOME/.config/hypr/scripts/ToggleTransparency.sh status",
+	"interval": 3,
+	"signal": 3,
+	"format": "{text}",
+	"min-length": 2,
+	"on-click": "$HOME/.config/hypr/scripts/ToggleTransparency.sh toggle",
+	"tooltip": true,
+	"escape": false
+},
+
 }

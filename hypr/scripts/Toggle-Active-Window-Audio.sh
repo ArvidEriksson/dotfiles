@@ -8,7 +8,9 @@
 set -euo pipefail
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-swayIconDir="${XDG_CONFIG_HOME}/swaync/icons"
+_icon_vol_high="audio-volume-high"
+_icon_vol_low="audio-volume-low"
+_icon_vol_mute="audio-volume-muted"
 
 #// Credits to sl1ng for the orginal script. Rewritten by Vyle.
 ctlcheck=("pactl" "jq" "notify-send" "awk" "pgrep" "hyprctl" "iconv")
@@ -20,7 +22,7 @@ done
 
 if (( ${#missing[@]} )) 2>/dev/null; then
   if printf '%s\n' "${missing[@]}" | grep -qx "pactl"; then
-    notify-send -a "t1" -r 91190 -t 2000 -i "${swayIconDir}/volume-low.png" "ERROR: pactl not installed" "Install 'pactl' (pulseaudio-utils or pipewire-pulse)."
+    notify-send -a "t1" -r 91190 -t 2000 -i "${_icon_vol_low}" "ERROR: pactl not installed" "Install 'pactl' (pulseaudio-utils or pipewire-pulse)."
   fi
   echo "Missing required dependencies: \"${missing[*]}\""
   exit 1
@@ -96,7 +98,7 @@ fi
 if [[ ${#sink_ids[@]} -eq 0 ]]; then
   if [[ -n "${HYPRLAND_INSTANCE_SIGNATURE}" ]]; then
     # Even if the fallback_pid remains empty, we will dispatch exit code based on $HYPRLAND_INSTANCE_SIGNATURE.
-    notify-send -a "t1" -r 91190 -t 1200 -i "${swayIconDir}/volume-low.png" "No sink input for the active_window: ${__class}"
+    notify-send -a "t1" -r 91190 -t 1200 -i "${_icon_vol_low}" "No sink input for the active_window: ${__class}"
     echo "No sink input for focused window: ${__class}"
     exit 1
   else
@@ -117,10 +119,10 @@ want_mute=$(jq -r --argjson ids "$idsJson" '
 
 if [[ "${want_mute}" == "no" ]]; then
   state_msg="Unmuted"
-  swayIcon="${swayIconDir}/volume-high.png"
+  swayIcon="${_icon_vol_high}"
 else
   state_msg="Muted"
-  swayIcon="${swayIconDir}/volume-mute.png"
+  swayIcon="${_icon_vol_mute}"
 fi
 
 [[ -f "${swayIcon}" ]] || echo -e "Missing swaync icons."
@@ -136,7 +138,7 @@ for id in "${sink_ids[@]}"; do
 done
 
 if [[ "$changed" -eq 0 ]]; then
-  notify-send -a "t2" -r 91190 -t 1200 -i "${swayIconDir}/volume-low.png" "Failed to change sink input(s)" "${failed_ids[*]:-unknown}"
+  notify-send -a "t2" -r 91190 -t 1200 -i "${_icon_vol_low}" "Failed to change sink input(s)" "${failed_ids[*]:-unknown}"
   exit 1
 fi
 

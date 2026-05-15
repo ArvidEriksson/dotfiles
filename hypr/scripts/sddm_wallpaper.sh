@@ -27,13 +27,11 @@ sddm_simple="$sddm_themes_dir/simple_sddm_2"
 rofi_wallust="$HOME/.config/rofi/wallust/colors-rofi.rasi"
 sddm_theme_conf="$sddm_simple/theme.conf"
 if [[ ! -f "$rofi_wallust" ]]; then
-    notify-send -i "$iDIR/error.png" "SDDM" "Wallust colors file not found ($rofi_wallust). Aborting."
+    notify-send -i "dialog-error" "SDDM" "Wallust colors file not found ($rofi_wallust). Aborting."
     exit 1
 fi
 
 # Directory for swaync
-iDIR="$HOME/.config/swaync/images"
-iDIRi="$HOME/.config/swaync/icons"
 
 # Parse arguments
 mode="effects" # default
@@ -46,11 +44,11 @@ fi
 # Abort if SDDM is not running (avoid errors on non-SDDM systems)
 if command -v systemctl >/dev/null 2>&1; then
     if ! systemctl is-active --quiet sddm; then
-        notify-send -i "$iDIR/error.png" "SDDM" "SDDM is not running. Skipping SDDM wallpaper update."
+        notify-send -i "dialog-error" "SDDM" "SDDM is not running. Skipping SDDM wallpaper update."
         exit 0
     fi
 elif ! pidof sddm >/dev/null 2>&1; then
-    notify-send -i "$iDIR/error.png" "SDDM" "SDDM is not running. Skipping SDDM wallpaper update."
+    notify-send -i "dialog-error" "SDDM" "SDDM is not running. Skipping SDDM wallpaper update."
     exit 0
 fi
 
@@ -79,7 +77,7 @@ for var in color0 color1 color7 color10 color12 color13 foreground; do
 done
 
 if [[ ${#missing_colors[@]} -gt 0 ]]; then
-    notify-send -i "$iDIR/error.png" "SDDM" "Missing color(s): ${missing_colors[*]}. Run Wallust first."
+    notify-send -i "dialog-error" "SDDM" "Missing color(s): ${missing_colors[*]}. Run Wallust first."
     exit 1
 fi
 #background-color=$(grep -oP 'background:\s*\K#[A-Fa-f0-9]+' "$rofi_wallust")
@@ -93,7 +91,7 @@ fi
 
 # Abort on NixOS where this repo doesn't manage SDDM and themes are typically read-only
 if hostnamectl 2>/dev/null | grep -q 'Operating System: NixOS'; then
-    notify-send -i "$iDIR/error.png" "SDDM" "NixOS detected: skipping SDDM background change."
+    notify-send -i "dialog-error" "SDDM" "NixOS detected: skipping SDDM background change."
     exit 0
 fi
 
@@ -131,5 +129,5 @@ if [ -e \"$sddm_simple/Backgrounds/default.png\" ]; then
   sudo cp -f \"$wallpaper_path\" \"$sddm_simple/Backgrounds/default.png\"
 fi
 
-notify-send -i \"$iDIR/ja.png\" \"SDDM\" \"Background SET\"
+notify-send -i \"dialog-information\" \"SDDM\" \"Background SET\"
 "
