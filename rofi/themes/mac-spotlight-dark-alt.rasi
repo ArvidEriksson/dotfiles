@@ -4,6 +4,11 @@
  * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
  *******************************************************************************/
 
+configuration {
+    show-icons:     true;
+    icon-theme:     "Flat-Remix-Blue-Dark";
+}
+
 * {
     font:   "rofi 12";
 

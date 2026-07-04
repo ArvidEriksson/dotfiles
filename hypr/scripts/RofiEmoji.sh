@@ -16,7 +16,7 @@ if pidof rofi > /dev/null; then
 fi
 
 sed '1,/^# # DATA # #$/d' "$0" | \
-rofi -i -dmenu -mesg "$msg" -config $rofi_theme | \
+rofi -i -dmenu -config $rofi_theme | \
 awk '{print $1}' | \
 head -n 1 | \
 tr -d '\n' | \
