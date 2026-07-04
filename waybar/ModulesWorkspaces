@@ -244,6 +244,7 @@
 		"title<.*[Aa]ntigravity.*>": "󰨞 ",
 		"class<dev.zed.Zed>": "󰵁",
 		"class<codeblocks>": "󰅩 ",
+		"class<unityhub-bin|Unity>": " ",
 		"title<.*github.*>": " ",
 		"class<com-jetpackduba-gitnuro-MainKt>": " ",
 		"title<.*Gitnuro.*>": " ",
