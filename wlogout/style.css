@@ -1,88 +1,94 @@
-/* ----------- 💫 https://github.com/LinuxBeginnings 💫 -------- */
-/* wallust-wlogout */
+/* wlogout — matched to waybar Sleek-macOS theme */
+/* Icons are Nerd Font glyphs pre-rendered to monochrome PNGs (glyph-*.png).
+   Regenerate with ImageMagick pango: rendering if the font changes. */
 
-/* Importing wallust colors */
-@import '../../.config/waybar/wallust/colors-waybar.css';
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: normal;
+}
 
 window {
-    font-size: 24pt;
-    color: @foreground; /* text */
-    background-color: rgba(30, 30, 46, 0.8);
+    background-color: rgba(20, 20, 24, 0.82);
 }
 
 button {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.55);
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin: 10px;
+    padding-bottom: 24px;
+    /* equal min-width on every button keeps the grid cells uniform —
+       otherwise each button sizes to its label text */
+    min-width: 180px;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20%;
-    background-color: rgba(200, 220, 255, 0);
-    animation: gradient_f 10s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    border-radius: 80px;
-	border:0px;
-	outline-style: none;
-}
-
-button:focus {
-    background-size: 50%;
-	border: 0px;
-	outline-style: none;
-
-}
-
-button:hover {
-    background-color: transparent; 
-    color: @color13;
-    background-size: 50%;
-    margin: 30px;
-    border-radius: 80px;
+    background-position: center 42%;
+    background-size: 32%;
+    box-shadow: none;
+    text-shadow: none;
     outline-style: none;
-	
+    transition: all 0.2s ease;
 }
 
-/* Adjust the size of the icon or content inside the button */
-button span {
-    font-size: 1.2em; /* Increase the font size */
+button:focus,
+button:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.95);
 }
 
+#shutdown:hover,
+#shutdown:focus {
+    background-color: rgba(235, 77, 75, 0.25);
+    border: 1px solid rgba(235, 77, 75, 0.4);
+    color: rgba(255, 160, 160, 0.95);
+}
 
 #lock {
-    background-image: image(url("./icons/lock.png"));
+    background-image: image(url("./icons/glyph-lock.png"));
 }
-#lock:hover {
-    background-image: image(url("./icons/lock-hover.png"));
+#lock:hover,
+#lock:focus {
+    background-image: image(url("./icons/glyph-lock-hover.png"));
 }
 
 #logout {
-    background-image: image(url("./icons/logout.png"));
+    background-image: image(url("./icons/glyph-logout.png"));
 }
-#logout:hover {
-    background-image: image(url("./icons/logout-hover.png"));
+#logout:hover,
+#logout:focus {
+    background-image: image(url("./icons/glyph-logout-hover.png"));
 }
 
 #suspend {
-    background-image: image(url("./icons/sleep.png"));
+    background-image: image(url("./icons/glyph-sleep.png"));
 }
-#suspend:hover {
-    background-image: image(url("./icons/sleep-hover.png"));
+#suspend:hover,
+#suspend:focus {
+    background-image: image(url("./icons/glyph-sleep-hover.png"));
 }
 
 #shutdown {
-    background-image: image(url("./icons/power.png"));
+    background-image: image(url("./icons/glyph-power.png"));
 }
-#shutdown:hover {
-    background-image: image(url("./icons/power-hover.png"));
+#shutdown:hover,
+#shutdown:focus {
+    background-image: image(url("./icons/glyph-power-red.png"));
 }
 
 #reboot {
-    background-image: image(url("./icons/restart.png"));
+    background-image: image(url("./icons/glyph-restart.png"));
 }
-#reboot:hover {
-    background-image: image(url("./icons/restart-hover.png"));
+#reboot:hover,
+#reboot:focus {
+    background-image: image(url("./icons/glyph-restart-hover.png"));
 }
 
 #hibernate {
-    background-image: image(url("./icons/hibernate.png"));
+    background-image: image(url("./icons/glyph-hibernate.png"));
 }
-#hibernate:hover {
-    background-image: image(url("./icons/hibernate-hover.png"));
+#hibernate:hover,
+#hibernate:focus {
+    background-image: image(url("./icons/glyph-hibernate-hover.png"));
 }
