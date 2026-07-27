@@ -1,0 +1,71 @@
+onboarding = false
+
+# prefix+C: new tab in the current workspace with Claude Code already running.
+# (prefix+c stays the plain new-tab binding.)
+[[keys.command]]
+key = "prefix+shift+c"
+type = "shell"
+command = "/home/arvid/.config/herdr/new-claude-tab.sh"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[ui.sound]
+enabled = false
+
+[ui.sidebar.agents]
+# `dim = false` is the load-bearing part. These secondary cells default to the
+# ANSI dim attribute, which pulls any foreground back toward the background —
+# so raising the theme color alone doesn't make them readable. Setting fg +
+# dim explicitly here overrides the contextual default outright.
+rows = [
+  ["state_icon", "workspace", { token = "tab", fg = "#909090", dim = false }],
+  [{ token = "agent", fg = "#909090", dim = false }],
+]
+
+[ui.sidebar.agents.rows_by_agent]
+# Show Claude's own task title instead of the literal "claude" agent id.
+claude = [
+  ["state_icon", "workspace", { token = "tab", fg = "#909090", dim = false }],
+  [{ token = "terminal_title_stripped", fg = "#A0A0A0", dim = false }],
+]
+
+[theme]
+# Base picked for its cool-gray/vivid-accent residual palette (closest to Panda
+# for any color not covered by the 16 tokens below). Was "vesper".
+name = "dracula"
+auto_switch = false  # Panda has no light sibling — leave off.
+
+# Panda (panda-syntax) — https://github.com/tinkertrain/panda-syntax-vscode
+# Hexes are verbatim from themes/colors.yaml in that repo.
+[theme.custom]
+# Grays: chrome bg -> raised surfaces -> borders.
+panel_bg    = "#242526"  # _background-dark  (VS Code sideBar)
+surface0    = "#292A2B"  # _background-light (editor bg)
+surface1    = "#31353A"  # _seal             (line highlight / selected row)
+surface_dim = "#222223"  # _charcoal         (borders between gray bgs)
+# Panda's _gray (#373B41) and _seal (#31353A, surface1 below) are BOTH background
+# tones in Panda — only 1.10:1 apart. Mapping one to a mark/text token and the
+# other to a surface made the tab-number chip unreadable. Lifted into real
+# foreground range: 4.5:1 on surface1. Step down to #8A8F9C (3.8:1) if the pane
+# borders that also use this token now read too bright.
+overlay0    = "#9CA2B0"
+# Lifted off Panda's palette on purpose: overlay1 draws tab numbers and the
+# agent-card secondary row, and Panda's _light-midnight (#676B79) is a *comment*
+# color — only 2.9:1 on panel_bg, below WCAG AA. Same blue-violet hue, brightened
+# to 5.9:1. Dial toward #8E93A3 (5.0:1) if this now reads too loud.
+overlay1    = "#9AA0B0"
+
+# Text.
+text     = "#E6E6E6"     # _very-light-gray  (primary font color)
+subtext0 = "#BBBBBB"     # _contrast-gray
+
+# Accents.
+accent = "#FF75B5"       # _pink  — Panda's signature color
+mauve  = "#B084EB"       # _purple
+green  = "#19F9D8"       # _green (Panda's "green" is a mint/cyan)
+teal   = "#6FE7D2"       # _light-green — kept distinct from green above
+yellow = "#FFCC95"       # _light-orange
+peach  = "#FFB86C"       # _orange
+red    = "#FF2C6D"       # _red
+blue   = "#45A9F9"       # _blue
