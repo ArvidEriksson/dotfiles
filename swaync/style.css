@@ -106,8 +106,7 @@
 
 
 .notification-action {
-    border: 1px solid @noti-border-color;
-    border-top: none;
+    border: none;
     border-radius: 10px;
 }
 
