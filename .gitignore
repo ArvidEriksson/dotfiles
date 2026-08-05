@@ -1,0 +1,32 @@
+# This repo is a copy-based mirror of ~/.config and is PUBLIC.
+# Keep generated state, machine-local paths and anything containing
+# conversation or session data out of it.
+
+# Editor and upgrade-script backups
+*.bak
+*.bak-*
+*.orig
+*.old
+*.tmp
+*~
+
+# Backup trees left behind by KooL's Hyprland-Dots upgrade scripts.
+# Deliberately narrow: swaync/icons/backup.png is a tracked asset, so a
+# broad *backup* pattern would be wrong.
+backup-pre-*/
+
+# Logs and unix sockets
+*.log
+*.sock
+
+# herdr runtime state. session-history.json and session.json hold terminal
+# and agent conversation history, so these must never reach a public repo.
+/herdr/session.json
+/herdr/session-history.json
+/herdr/sessions/
+
+# herdr generated plugin state; plugins.json embeds absolute /home paths
+/herdr/plugins/
+/herdr/plugins.json
+/herdr/.plugins.lock
+/herdr/release-notes.json
