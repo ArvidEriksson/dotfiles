@@ -69,3 +69,15 @@ yellow = "#FFCC95"       # _light-orange
 peach  = "#FFB86C"       # _orange
 red    = "#FF2C6D"       # _red
 blue   = "#45A9F9"       # _blue
+
+[session]
+# Restore panes into their previous Claude/agent conversations after a server
+# restart (i.e. after a reboot). Needs `herdr integration install claude` —
+# the SessionStart hook is what reports the session ref Herdr resumes into.
+resume_agents_on_restore = true
+
+[experimental]
+# Also bring back each pane's recent scrollback across a full server restart,
+# so a resumed tab doesn't come up as a blank screen. Experimental; set false
+# if it misbehaves.
+pane_history = true

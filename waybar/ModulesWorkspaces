@@ -167,6 +167,7 @@
 },
 // NUMBERS and ICONS style with window rewrite 
 "hyprland/workspaces#rw": {
+	"tooltip": false,
 	"disable-scroll": true,
 	"all-outputs": true,
 	"warp-on-scroll": false,

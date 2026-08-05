@@ -37,10 +37,11 @@
 	"drawer": {
 		"transition-duration": 500,
 		"children-class": "cpu",
-		"transition-left-to-right": true
+		"transition-left-to-right": true,
+		"click-to-reveal": true
         },
 	"modules": [
-		"temperature",		
+		"temperature#mobo",
 		"cpu",
 		"power-profiles-daemon",	
 		"memory",

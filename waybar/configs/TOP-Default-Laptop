@@ -45,7 +45,6 @@
 	"group/mobo_drawer",
 	"pulseaudio",
 	"pulseaudio#microphone",
-	"custom/transparency",
 		"custom/nightlight",
 	"custom/keyboard",
 	"custom/power",
