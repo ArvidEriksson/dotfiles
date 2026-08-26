@@ -243,6 +243,7 @@
 		"class<VSCode|code|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
 		"class<[Aa]ntigravity>": "󰨞 ",
 		"title<.*[Aa]ntigravity.*>": "󰨞 ",
+		"class<[Oo]rca>": "󱢴 ",
 		"class<dev.zed.Zed>": "󰵁",
 		"class<codeblocks>": "󰅩 ",
 		"class<unityhub-bin|Unity>": " ",

@@ -1,5 +1,12 @@
 onboarding = false
 
+# Worktree lifecycle. Only new_worktree (prefix+shift+G) is bound by default;
+# these two ship unset. remove_worktree deletes the checkout but leaves the
+# branch behind, so a merged agent branch still needs `git branch -d`.
+[keys]
+open_worktree = "prefix+shift+o"
+remove_worktree = "prefix+shift+x"
+
 # prefix+C: new tab in the current workspace with Claude Code already running.
 # (prefix+c stays the plain new-tab binding.)
 [[keys.command]]
@@ -9,6 +16,17 @@ command = "/home/arvid/.config/herdr/new-claude-tab.sh"
 
 [ui]
 show_agent_labels_on_pane_borders = true
+
+agent_panel_sort = "priority"
+
+# `delivery` ships as "off", which means a coder going blocked in a background
+# workspace announced itself nowhere at all — the fan-out failure that actually
+# bites. "herdr" draws an in-app toast; switch to "terminal" if you start
+# attaching over SSH, or "system" for the desktop notification service.
+# Sound stays off below, so these are silent and visual only.
+[ui.toast]
+delivery = "herdr"
+delay_seconds = 1
 
 [ui.sound]
 enabled = false

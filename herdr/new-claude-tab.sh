@@ -22,11 +22,17 @@ pane="$("$herdr" tab create --focus | jq -r '.result.root_pane.pane_id')"
 # `claude --resume <id>` after a reboot. `pane run` only ever records the cwd,
 # so those tabs come back as bare shells.
 #
+# Agent names are validated strictly (lowercase letters, digits, '-', '_'), and
+# pane ids are hex-suffixed — so from the tenth pane in a workspace on, w5:pA
+# would otherwise produce the rejected name claude-w5-pA.
+name="claude-${pane//:/-}"
+name="${name,,}"
+
 # `agent start` requires the pane to already be sitting at an interactive shell
 # prompt, and `tab create` returns before the shell has finished coming up — so
 # retry briefly instead of failing the whole binding on that race.
 for _ in $(seq 1 40); do
-  if out="$("$herdr" agent start "claude-${pane//:/-}" --kind claude --pane "$pane" 2>&1)"; then
+  if out="$("$herdr" agent start "$name" --kind claude --pane "$pane" 2>&1)"; then
     case "$out" in
       *'"error"'*) ;;
       *) exit 0 ;;
