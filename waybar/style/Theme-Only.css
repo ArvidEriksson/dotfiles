@@ -1,0 +1,3 @@
+/* Deliberately empty: waybar renders with the GTK theme alone.
+   Restore the styled bar with
+   ln -sf ~/.config/waybar/style/Sleek-macOS.css ~/.config/waybar/style.css */

@@ -1,6 +1,8 @@
-/* Sleek macOS / GNOME-inspired theme */
+/* Sleek macOS / GNOME-inspired theme — GTK-theme-driven palette */
 
-@import '../../.config/waybar/wallust/colors-waybar.css';
+/* Colours come from the active GTK theme's exported names instead of a
+   wallust palette, so the bar follows whatever gtk-theme-name is set to.
+   Flat-Remix-GTK-Blue-Dark supplies them today. */
 
 * {
   font-family: "SF Pro Display", "JetBrainsMono Nerd Font";
@@ -11,8 +13,8 @@
 }
 
 window#waybar {
-  background-color: rgba(20, 20, 24, 0.82);
-  color: rgba(255, 255, 255, 0.9);
+  background-color: alpha(@theme_bg_color, 0.82);
+  color: alpha(@theme_fg_color, 0.9);
   border-radius: 0px;
   border: none;
 }
@@ -23,19 +25,19 @@ window#waybar.hidden {
 }
 
 tooltip {
-  background: rgba(30, 30, 36, 0.92);
+  background: alpha(@theme_base_color, 0.94);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid alpha(@theme_fg_color, 0.08);
 }
 
 tooltip label {
-  color: rgba(255, 255, 255, 0.85);
+  color: alpha(@theme_fg_color, 0.85);
 }
 
 #taskbar button,
 #workspaces button {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.45);
+  color: alpha(@theme_fg_color, 0.45);
   box-shadow: none;
   text-shadow: none;
   padding: 0px 6px;
@@ -45,20 +47,20 @@ tooltip label {
 }
 
 #workspaces button.active {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.95);
+  background-color: alpha(@theme_fg_color, 0.12);
+  color: alpha(@theme_fg_color, 0.95);
   padding: 0px 8px;
   border-radius: 6px;
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.8);
+  background: alpha(@theme_fg_color, 0.08);
+  color: alpha(@theme_fg_color, 0.8);
 }
 
 #workspaces button.urgent {
-  background-color: rgba(235, 77, 75, 0.6);
-  color: #ffffff;
+  background-color: alpha(@error_color, 0.65);
+  color: @theme_selected_fg_color;
 }
 
 #backlight,
@@ -110,7 +112,7 @@ tooltip label {
 #custom-hyprpicker,
 #custom-weather,
 #custom-weather2 {
-  color: rgba(255, 255, 255, 0.85);
+  color: alpha(@theme_fg_color, 0.85);
   background-color: transparent;
   border: none;
   border-radius: 0px;
@@ -122,27 +124,27 @@ tooltip label {
 }
 
 #clock {
-  color: rgba(255, 255, 255, 0.95);
+  color: alpha(@theme_fg_color, 0.95);
 }
 
 #battery {
-  color: rgba(255, 255, 255, 0.85);
+  color: alpha(@theme_fg_color, 0.85);
 }
 
 #battery.charging,
 #battery.full,
 #battery.plugged {
-  color: #a6e3a1;
+  color: @success_color;
 }
 
 @keyframes blink {
   to {
-    color: #f38ba8;
+    color: @error_color;
   }
 }
 
 #battery.critical:not(.charging) {
-  color: #f38ba8;
+  color: @error_color;
   animation-name: blink;
   animation-duration: 2.0s;
   animation-timing-function: steps(12);
@@ -152,26 +154,26 @@ tooltip label {
 
 #pulseaudio,
 #wireplumber {
-  color: rgba(255, 255, 255, 0.85);
+  color: alpha(@theme_fg_color, 0.85);
 }
 
 #network.disconnected,
 #bluetooth.disconnected {
-  color: rgba(255, 255, 255, 0.35);
+  color: alpha(@theme_fg_color, 0.35);
 }
 
 #custom-power {
-  color: rgba(255, 100, 100, 0.9);
+  color: @error_color;
   padding: 0px 0px 0px 6px;
 }
 
 #custom-hypridle.notactive,
 #idle_inhibitor.activated {
-  color: #a6e3a1;
+  color: @success_color;
 }
 
 #temperature.critical {
-  color: #f38ba8;
+  color: @error_color;
 }
 
 #tray > .passive {
@@ -183,12 +185,12 @@ tooltip label {
 }
 
 #taskbar button.active {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: alpha(@theme_fg_color, 0.12);
   padding: 0px 10px;
 }
 
 #taskbar button:hover {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: alpha(@theme_fg_color, 0.06);
 }
 
 #backlight-slider slider,
