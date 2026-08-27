@@ -32,4 +32,5 @@
 //@theme "~/.config/rofi/themes/saint-rofi.rasi"
 //@theme "~/.config/rofi/themes/KooL_style-11-Win11-list-light.rasi"
 //@theme "~/.config/rofi/themes/KooL_style-11-Win11-list-dark.rasi"
-@theme "~/.config/rofi/themes/mac-spotlight-dark-alt.rasi"
+//@theme "~/.config/rofi/themes/mac-spotlight-dark-alt.rasi"
+@theme "~/.config/rofi/themes/arvid-spotlight-glass.rasi"

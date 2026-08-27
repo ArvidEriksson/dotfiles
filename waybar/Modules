@@ -14,8 +14,8 @@
 	],
 	//"thermal-zone": 0,
 	"critical-threshold": 82,
-	"format-critical": "{temperatureC}°C {icon}",
-	"format": "{temperatureC}°C {icon}",
+	"format-critical": "{temperatureC}°C {icon}",
+	"format": "{temperatureC}°C {icon}",
 	"format-icons": [
 		"󰈸"
 	],
@@ -32,8 +32,8 @@
 		"/sys/class/thermal/thermal_zone0/temp"
 	],
 	"critical-threshold": 82,
-	"format-critical": "{temperatureC}°C {icon}",
-	"format": "{temperatureC}°C {icon}",
+	"format-critical": "{temperatureC}°C {icon}",
+	"format": "{temperatureC}°C {icon}",
 	"format-icons": [
 		"󰈸"
 	]
@@ -43,15 +43,15 @@
 	"interval": 2,
 	"align": 0,
 	"rotate": 0,
-	//"format": "{icon} {percent}%",
+	//"format": "{icon} {percent}%",
 	"format-icons": [
-		" ",
-		" ",
-		" ",
-		"󰃝 ",
-		"󰃞 ",
-		"󰃟 ",
-		"󰃠 "
+		" ",
+		" ",
+		" ",
+		"󰃝 ",
+		"󰃞 ",
+		"󰃟 ",
+		"󰃠 "
 	],
 	"format": "{icon}",
 	//"format-icons": ["","","","","","","","","","","","","","",""],
@@ -68,7 +68,7 @@
 
 "backlight#2": {
   "device": "intel_backlight",
-  "format": "{icon} {percent}%",
+  "format": "{icon} {percent}%",
   "format-icons": ["", ""]
 },
 
@@ -85,12 +85,12 @@
 		"warning": 30,
 		"critical": 15
 	},
-	"format": "{icon} {capacity}%",
-	"format-charging": " {capacity}%",
-	"format-plugged": "󱘖 {capacity}%",
+	"format": "{icon} {capacity}%",
+	"format-charging": " {capacity}%",
+	"format-plugged": "󱘖 {capacity}%",
 	"format-alt-click": "click",
-	"format-full": "{icon} Full",
-	"format-alt": "{icon} {time}",
+	"format-full": "{icon} Full",
+	"format-alt": "{icon} {time}",
 	"format-icons": [
 		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
 	],
@@ -102,21 +102,21 @@
 },
 
 "bluetooth": {
-	"format": " ",
+	"format": " ",
 	"format-disabled": "󰂳",
-	"format-connected": "󰂱 {num_connections}",
-	"tooltip-format": " {device_alias}",
+	"format-connected": "󰂱 {num_connections}",
+	"tooltip-format": " {device_alias}",
 	"tooltip-format-connected": "{device_enumerate}",
-	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
 	"tooltip": true,
 	"on-click": "blueman-manager",
 },
 
 "clock": {
 	"interval": 1,
-    //"format": " {:%I:%M %p}", // AM PM format
-    "format": " {:%H:%M:%S}", // 24H
-	"format-alt": " {:L%H:%M   %d %B, %A}",
+    //"format": " {:%I:%M %p}", // AM PM format
+    "format": " {:%H:%M:%S}", // 24H
+	"format-alt": " {:L%H:%M  %d %B, %A}",
 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
 	"calendar": {
 		"mode": "year",
@@ -142,8 +142,8 @@
 },
 
 "clock#2": {
-    //"format": " {:%I:%M %p}", // AM PM format
-    "format": "  {:%H:%M}", // 24H
+    //"format": " {:%I:%M %p}", // AM PM format
+    "format": " {:%H:%M}", // 24H
     "format-alt": "{:L%A  |  %H:%M  |  %e %B}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 },
@@ -170,11 +170,11 @@
 },
 
 "cpu": {
-	"format": "{usage}% 󰍛",
+	"format": "{usage}% 󰍛",
 	"interval": 1,
 	"min-length": 5,
 	"format-alt-click": "click",
-	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
 	"format-icons": [
 		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
 	],
@@ -186,7 +186,7 @@
 	//"format": "󰋊",
 	"path": "/",
 	//"format-alt-click": "click",
-	"format": "{percentage_used}% 󰋊",
+	"format": "{percentage_used}% 󰋊",
 	//"tooltip": true,
 	"tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
 },
@@ -200,7 +200,7 @@
 },
 
 "hyprland/submap": {
-	"format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+	"format": "<span style=\"italic\"> {}</span>", // Icon: expand-arrows-alt
 	"tooltip": false,
 },
 
@@ -211,7 +211,7 @@
 	"offscreen-css": true,
 	"offscreen-css-text": "(inactive)",
 	"rewrite": {
-		"(.*) — Mozilla Firefox": " $1",
+		"(.*) — Mozilla Firefox": " $1",
 		"(.*) - fish": "> [$1]",
 		"(.*) - zsh": "> [$1]",
 		"(.*) - $term": "> [$1]",
@@ -224,8 +224,8 @@
 	"tooltip-format-deactivated": "Idle inhibitor not active",
 	"format": "{icon}",
 	"format-icons": {
-		"activated": " ",
-		"deactivated": " ",
+		"activated": " ",
+		"deactivated": " ",
 	}
 },
 
@@ -233,8 +233,8 @@
 	//"numlock": true,
 	"capslock": true,
 	"format": {
-		"numlock": "N {icon}",
-		"capslock": "󰪛 {icon}",
+		"numlock": "N {icon}",
+		"capslock": "󰪛 {icon}",
 	},
 	"format-icons": {
 		"locked": "",
@@ -244,8 +244,8 @@
 
 "memory": {
 	"interval": 10,
-	"format": "{used:0.1f}G 󰾆",
-	"format-alt": "{percentage}% 󰾆",
+	"format": "{used:0.1f}G 󰾆",
+	"format-alt": "{percentage}% 󰾆",
 	"format-alt-click": "click",
 	"tooltip": true,
 	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
@@ -254,8 +254,8 @@
 
 "mpris": {
 	"interval": 10,
-	"format": "{player_icon} ",
-	"format-paused": "{status_icon} <i>{dynamic}</i>",
+	"format": "{player_icon} ",
+	"format-paused": "{status_icon} <i>{dynamic}</i>",
 	"on-click-middle": "playerctl play-pause",
 	"on-click": "playerctl previous",
 	"on-click-right": "playerctl next",
@@ -264,7 +264,7 @@
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"smooth-scrolling-threshold": 1,
 	"tooltip": true,
-	"tooltip-format": "{status_icon} {dynamic}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+	"tooltip-format": "{status_icon} {dynamic}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
 	"player-icons": {
 		"chromium": "",
 		"default": "",
@@ -289,11 +289,11 @@
 	"format-wifi": "{icon}",
 	"format-ethernet": "󰌘",
 	"format-disconnected": "󰌙",
-	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
-	"format-linked": "󰈁 {ifname} (No IP)",
-	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-	"tooltip-format-ethernet": "{ifname} 󰌘",
-	"tooltip-format-disconnected": "󰌙 Disconnected",
+	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+	"format-linked": "󰈁 {ifname} (No IP)",
+	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+	"tooltip-format-ethernet": "{ifname} 󰌘",
+	"tooltip-format-disconnected": "󰌙 Disconnected",
 	"max-length": 30,
 	"format-icons": [
 		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
@@ -304,14 +304,14 @@
 "network#speed": {
 	"interval": 1,
 	"format": "{ifname}",
-	"format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-	"format-ethernet": "󰌘  {bandwidthUpBytes}  {bandwidthDownBytes}",
+	"format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+	"format-ethernet": "󰌘  {bandwidthUpBytes}  {bandwidthDownBytes}",
 	"format-disconnected": "󰌙",
 	"tooltip-format": "{ipaddr}",
-	"format-linked": "󰈁 {ifname} (No IP)",
-	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-	"tooltip-format-ethernet": "{ifname} 󰌘",
-	"tooltip-format-disconnected": "󰌙 Disconnected",
+	"format-linked": "󰈁 {ifname} (No IP)",
+	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+	"tooltip-format-ethernet": "{ifname} 󰌘",
+	"tooltip-format-disconnected": "󰌙 Disconnected",
 	"min-length": 24,
 	"max-length": 24,
 	"format-icons": [
@@ -320,7 +320,7 @@
 },
 
 "power-profiles-daemon": {
-  "format": "{icon} ",
+  "format": "{icon} ",
   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
   "tooltip": true,
   "format-icons": {
@@ -332,8 +332,8 @@
 },
 
 "pulseaudio": {
-	"format": "{icon} {volume}%",
-	"format-bluetooth": "{icon} 󰂰 {volume}%",
+	"format": "{icon} {volume}%",
+	"format-bluetooth": "{icon} 󰂰 {volume}%",
 	"format-muted": "󰖁",
 	"format-icons": {
 		"headphone": "",
@@ -354,14 +354,14 @@
 	"on-click-right": "pavucontrol -t 3",
 	"on-scroll-up": "swayosd-client --output-volume raise",
 	"on-scroll-down": "swayosd-client --output-volume lower",
-	"tooltip-format": "{icon} {desc} | {volume}%",
+	"tooltip-format": "{icon} {desc} | {volume}%",
 	"smooth-scrolling-threshold": 1,
 },
 
 "pulseaudio#1": {
-  "format": "{icon} {volume}%",
-  "format-bluetooth": "{icon} {volume}%",
-  "format-bluetooth-muted": " {icon}",
+  "format": "{icon} {volume}%",
+  "format-bluetooth": "{icon} {volume}%",
+  "format-bluetooth-muted": " {icon}",
   "format-muted": "󰸈",
   "format-icons": {
       "headphone": "",
@@ -375,12 +375,12 @@
   "on-click": "pamixer --toggle-mute",
   "on-click-right": "pavucontrol -t 3",
   "tooltip": true,
-  "tooltip-format": "{icon} {desc} | {volume}%",
+  "tooltip-format": "{icon} {desc} | {volume}%",
 },
 
 "pulseaudio#microphone": {
 	"format": "{format_source}",
-	"format-source": " {volume}%",
+	"format-source": " {volume}%",
 	"format-source-muted": "",
 	"on-click": "swayosd-client --input-volume mute-toggle",
 	"on-click-right": "pavucontrol -t 4",
@@ -396,8 +396,8 @@
 },
 
 "wireplumber": {
-	"format": "{icon} {volume} %",
-	"format-muted": " Mute",
+	"format": "{icon} {volume} %",
+	"format-muted": " Mute",
 	"on-click": "swayosd-client --output-volume mute-toggle",
 	"on-click-right": "pavucontrol -t 3",
 	"on-scroll-up": "swayosd-client --output-volume raise",
@@ -408,7 +408,7 @@
 },
 
 "wlr/taskbar": {
-	"format": "{icon} {name}",
+	"format": "{icon} {name}",
 	"icon-size": 16,
 	"all-outputs": false,
 	"tooltip-format": "{title}",

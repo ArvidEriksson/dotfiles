@@ -1,0 +1,123 @@
+/* Spotlight Light — macOS light-mode Spotlight */
+
+configuration {
+    show-icons:     true;
+    icon-theme:     "Flat-Remix-Blue-Light";
+    hover-select:   true;
+    me-select-entry: "MouseSecondary";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    font:   "Adwaita Sans 12";
+
+    bg-window:      rgba(245, 245, 247, 0.78);
+    bg-select:      rgba(0, 0, 0, 0.08);
+    hairline:       rgba(0, 0, 0, 0.10);
+    border-soft:    rgba(0, 0, 0, 0.12);
+
+    fg0:    #1D1D1F;
+    fg1:    #000000;
+    fg2:    rgba(60, 60, 67, 0.60);
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    background-color:   @bg-window;
+    location:           center;
+    width:              700;
+    y-offset:           -180;
+    border:             1px solid;
+    border-color:       @border-soft;
+    border-radius:      12px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    font:       "Adwaita Sans 18";
+    padding:    14px 18px;
+    spacing:    12px;
+    children:   [ textbox-search, entry ];
+}
+
+textbox-search {
+    expand:     false;
+    str:        "";
+    font:       "JetBrainsMono Nerd Font 15";
+    text-color: @fg2;
+    padding:    0 2px 0 2px;
+}
+
+textbox-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font:               inherit;
+    placeholder:        "Spotlight Search";
+    placeholder-color:  @fg2;
+    text-color:         @fg1;
+}
+
+listview {
+    lines:          9;
+    columns:        1;
+    fixed-height:   true;
+    padding:        6px 8px 8px 8px;
+    spacing:        2px;
+    border:         1px 0 0 0 solid;
+    border-color:   @hairline;
+    scrollbar:      false;
+}
+
+element {
+    padding:        7px 10px;
+    spacing:        12px;
+    border-radius:  7px;
+    background-color: transparent;
+    cursor:         pointer;
+}
+
+element normal active,
+element alternate active {
+    text-color: @fg0;
+}
+
+element selected normal,
+element selected active,
+element selected urgent {
+    background-color:   @bg-select;
+    text-color:         @fg1;
+}
+
+element-icon {
+    size:   1.35em;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+message {
+    padding:        8px 18px;
+    border:         1px 0 0 0 solid;
+    border-color:   @hairline;
+}
+
+textbox {
+    padding:    6px 10px;
+    text-color: @fg2;
+}
+
+element-text {
+    font: "Adwaita Sans 12";
+}

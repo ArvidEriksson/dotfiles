@@ -15,7 +15,7 @@
 	//"thermal-zone": 0,
 	"critical-threshold": 80,
 	"format-critical": "{icon}\n{temperatureC}°C",
-	"format": " {icon}",
+	"format": " {icon}",
 	"format-icons": [
 		"󰈸"
 	],
@@ -41,9 +41,9 @@
 },
 
 "clock#vertical": {
-	"format": "\n{:%H\n%M\n%S\n\n \n%d\n%m\n%y}",
+	"format": "\n{:%H\n%M\n%S\n\n \n%d\n%m\n%y}",
 	"interval": 1,
-	//"format": "\n{:%I\n%M\n%p\n\n \n%d\n%m\n%y}",
+	//"format": "\n{:%I\n%M\n%p\n\n \n%d\n%m\n%y}",
 	"tooltip": true,
 	"tooltip-format": "{calendar}",
 	"calendar": {
@@ -85,7 +85,7 @@
 		"default": [
 			"", "", "󰕾", ""
 		],
-		"tooltip-format": "{icon} {desc} | {volume}%",
+		"tooltip-format": "{icon} {desc} | {volume}%",
 		"ignored-sinks": [
 			"Easy Effects Sink"
 		],
@@ -95,7 +95,7 @@
 	"on-click-right": "pavucontrol -t 3",
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
-	"tooltip-format": "{icon} {desc} | {volume}%",
+	"tooltip-format": "{icon} {desc} | {volume}%",
 	"smooth-scrolling-threshold": 1,
 },
 

@@ -1,9 +1,11 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "center",
+  "positionX": "left",
   "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
+  "control-center-positionX": "left",
+  "control-center-positionY": "top",
   "layer-shell": true,
   "cssPriority": "user",
   "control-center-margin-top": 5,
@@ -29,38 +31,38 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
-      "dnd",
-      "mpris",
-      "volume", 
-      "backlight",
-      "title",
-      "notifications"
+    "dnd",
+    "mpris",
+    "volume",
+    "backlight",
+    "title",
+    "notifications"
   ],
   "widget-config": {
-      "title": {
-          "text": "Notifications",
-          "clear-all-button": true,
-          "button-text": "Clear"
-      },
-      "dnd": {
-          "text": "Do Not Disturb"
-      },
-      "label": {
-          "max-lines": 1,
-          "text": "Notification"
-      },
-      "mpris": {
-          "image-size": 96,
-          "image-radius": 8
-      },
-      "volume": {
-          "label": "󰕾"
-      },
-      "backlight": {
-          "label": "󰃟"
-      },
-      "notifications": {
-          "vexpand": false
-      }
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": "Notification"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 8
+    },
+    "volume": {
+      "label": "󰕾"
+    },
+    "backlight": {
+      "label": "󰃟"
+    },
+    "notifications": {
+      "vexpand": false
+    }
   }
 }

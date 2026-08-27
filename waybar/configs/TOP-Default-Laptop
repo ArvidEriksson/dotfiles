@@ -22,26 +22,18 @@
 "margin-right": 0,
 
 "modules-left": [
-	"custom/separator#blank",
-	"custom/cava_mviz",
-	"custom/separator#blank",
-	"custom/playerctl",
-	"custom/separator#blank",
-	"hyprland/window",
+	"group/notify",
+	"clock",
+	"custom/weather2",
 	],
 
 "modules-center": [
-	"custom/separator#blank",
-"hyprland/workspaces#rw",
-	"clock",
-	"group/notify",
-	"custom/weather2",
-	"idle_inhibitor",	
+	"hyprland/workspaces#rw",
 	],
 
 "modules-right": [
 	"tray",
-	"group/laptop",
+	"battery",
 	"group/mobo_drawer",
 	"pulseaudio",
 	"pulseaudio#microphone",
