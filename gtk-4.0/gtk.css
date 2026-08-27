@@ -1,0 +1,54 @@
+/* Spotlight Glass — GTK4 popover menus, same palette as the rofi launcher
+   and ~/.config/gtk-3.0/gtk.css. libadwaita ignores widget themes but does
+   read this file. */
+
+@define-color sg_panel      #1C1C1E;
+@define-color sg_select     rgba(255, 255, 255, 0.14);
+@define-color sg_edge       rgba(255, 255, 255, 0.14);
+@define-color sg_hairline   rgba(255, 255, 255, 0.10);
+@define-color sg_fg         #F2F2F7;
+@define-color sg_fg_strong  #FFFFFF;
+@define-color sg_fg_dim     rgba(235, 235, 245, 0.55);
+
+popover.menu > contents,
+popover.background > contents {
+  background-color: @sg_panel;
+  border: 1px solid @sg_edge;
+  border-radius: 10px;
+  padding: 5px;
+  color: @sg_fg;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+popover.menu > arrow,
+popover.background > arrow {
+  background-color: @sg_panel;
+  border: 1px solid @sg_edge;
+}
+
+popover.menu modelbutton,
+popover.background modelbutton {
+  border-radius: 7px;
+  padding: 6px 10px;
+  min-height: 20px;
+  color: @sg_fg;
+  background-color: transparent;
+}
+
+popover.menu modelbutton:hover,
+popover.background modelbutton:hover {
+  background-color: @sg_select;
+  color: @sg_fg_strong;
+}
+
+popover.menu modelbutton:disabled,
+popover.background modelbutton:disabled {
+  color: @sg_fg_dim;
+}
+
+popover.menu separator,
+popover.background separator {
+  background-color: @sg_hairline;
+  margin: 4px 6px;
+  min-height: 1px;
+}

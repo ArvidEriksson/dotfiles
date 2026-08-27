@@ -1,0 +1,66 @@
+/* Spotlight Glass — menus and popovers to match the rofi launcher
+   (~/.config/rofi/themes/arvid-spotlight-glass.rasi).
+   The panel is deliberately opaque, so Hyprland's popup blur
+   (decoration:blur:popups) has nothing to show through it. */
+
+@define-color sg_panel      #1C1C1E;
+@define-color sg_select     rgba(255, 255, 255, 0.14);
+@define-color sg_edge       rgba(255, 255, 255, 0.14);
+@define-color sg_hairline   rgba(255, 255, 255, 0.10);
+@define-color sg_fg         #F2F2F7;
+@define-color sg_fg_strong  #FFFFFF;
+@define-color sg_fg_dim     rgba(235, 235, 245, 0.55);
+
+menu,
+.menu,
+.context-menu,
+popover.background,
+popover.background > contents {
+  background-color: @sg_panel;
+  border: 1px solid @sg_edge;
+  border-radius: 10px;
+  padding: 5px;
+  color: @sg_fg;
+}
+
+window.popup decoration,
+menu decoration {
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+menu menuitem,
+.menu menuitem,
+popover.background modelbutton {
+  border-radius: 7px;
+  padding: 6px 10px;
+  min-height: 20px;
+  color: @sg_fg;
+  background-color: transparent;
+}
+
+menu menuitem:hover,
+.menu menuitem:hover,
+popover.background modelbutton:hover {
+  background-color: @sg_select;
+  color: @sg_fg_strong;
+}
+
+menu menuitem:disabled,
+.menu menuitem:disabled,
+popover.background modelbutton:disabled {
+  color: @sg_fg_dim;
+}
+
+menu separator,
+.menu separator,
+popover.background separator {
+  background-color: @sg_hairline;
+  margin: 4px 6px;
+  min-height: 1px;
+}
+
+menu menuitem check,
+menu menuitem radio {
+  color: @sg_fg_strong;
+}
